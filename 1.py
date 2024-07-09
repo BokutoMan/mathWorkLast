@@ -71,6 +71,6 @@ plt.grid(True)
 plt.show()
 
 # 显示结果表格
-print("x   精确解    改进欧拉法  四阶龙格-库塔法")
-for x, y_exact, y_euler, y_rk4 in zip(xs_exact, ys_exact, ys_improved_euler, ys_runge_kutta):
-    print(f"{x:.2f}  {y_exact:.6f}  {y_euler:.6f}  {y_rk4:.6f}")
+print("x   精确解    改进欧拉法  四阶龙格-库塔法    改进欧拉法误差    四阶龙格-库塔法误差")
+for x, y_exact, y_euler, y_rk4, y_euler_exact, y_rk4_exact in zip(xs_exact, ys_exact, ys_improved_euler, ys_runge_kutta, ys_improved_euler - ys_exact, ys_runge_kutta - ys_exact):
+    print(f"{x:.2f}  {y_exact:.6f}  {y_euler:.6f}  {y_rk4:.6f}  {y_euler_exact:.6f}  {y_rk4_exact:.10f}")
